@@ -18,7 +18,7 @@ envir = envirLoadParams('params_envir','envir',0);
 
 %% controller parameters
 % load parameters
-fm_alt_hold = fmCopterAltHoldIndiLoadParams( 'fm_copter_alt_hold_indi_params_Minnie' );
+fm_alt_hold = fmCopterAltHoldIndiLoadParams( 'fmCopterAltHoldIndi_params_Minnie' );
 
 %% joystick
 jystck = joystickLoadParams( 'joystick_params_Xbox_360', 2, 0 );

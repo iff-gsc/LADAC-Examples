@@ -11,7 +11,7 @@ addPathIris();
 clc_clear;
 
 %% load physical copter parameters
-copter = copterLoadParams( 'params_copter_IRIS' );
+copter = copterLoadParams( 'copter_params_IRIS' );
 
 %% environment parameters
 envir = envirLoadParams('params_envir','envir',0);

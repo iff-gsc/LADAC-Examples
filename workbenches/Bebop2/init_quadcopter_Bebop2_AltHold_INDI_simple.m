@@ -11,14 +11,14 @@ addPathBebop2();
 clc_clear;
 
 %% load physical copter parameters
-copter = copterLoadParams( 'params_copter_Bebop2' );
+copter = copterLoadParams( 'copter_params_Bebop2' );
 
 %% environment parameters
 envir = envirLoadParams('params_envir','envir',0);
 
 %% controller parameters
 % load parameters
-fm_alt_hold = fmCopterAltHoldIndiLoadParams( 'fm_copter_alt_hold_indi_params_bebop2' );
+fm_alt_hold = fmCopterAltHoldIndiLoadParams( 'fmCopterAltHoldIndi_params_bebop2' );
 
 %% joystick
 jystck = joystickLoadParams( 'joystick_params_Xbox_360', 2, 0 );

@@ -11,7 +11,7 @@ addPathMuetze();
 clc_clear;
 
 %% load physical copter parameters
-copter = copterLoadParams( 'params_copter_Muetze' );
+copter = copterLoadParams( 'copter_params_Muetze' );
 
 %% environment parameters
 envir = envirLoadParams('params_envir','envir',0);
