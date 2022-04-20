@@ -11,7 +11,7 @@ addPathBebop2();
 clc_clear;
 
 %% load physical copter parameters
-copter = copterLoadParams( 'params_copter_Bebop2' );
+copter = copterLoadParams( 'copter_params_Bebop2' );
 
 %% environment parameters
 envir = envirLoadParams('params_envir','envir',0);

@@ -11,14 +11,14 @@ addPathMuetze();
 clc_clear;
 
 %% load physical copter parameters
-copter = copterLoadParams( 'params_copter_Muetze' );
+copter = copterLoadParams( 'copter_params_Muetze' );
 
 %% environment parameters
 envir = envirLoadParams('params_envir','envir',0);
 
 %% controller parameters
 % load parameters
-fm_alt_hold = fmCopterAltHoldIndiLoadParams( 'fm_copter_alt_hold_indi_params_muetze' );
+fm_alt_hold = fmCopterAltHoldIndiLoadParams( 'fmCopterAltHoldIndi_params_muetze' );
 
 %% joystick
 jystck = joystickLoadParams( 'joystick_params_Xbox_360', 2, 0 );
