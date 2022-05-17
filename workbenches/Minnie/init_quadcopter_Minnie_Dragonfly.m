@@ -13,9 +13,8 @@ clc_clear;
 
 %% waypoints
 
-waypoints = [1 -1 -0.2; 2 0 -0.1; 1 1 -0.1; -1 -1 -0.1; -2 0 -0.1; -1 1 -0.2]'.*[10;2;100]*0.5;
-waypoints = [ 0 0 0; 1 0 -1; 0 0 -2; -1 0 -1 ]'*10 + [0;0;-15];
-% waypoints = [ 0 0 0; 1 1 0; 0 2 0; -1 1 0 ]'*10 + [0;0;-5];
+waypoints = [ 0 0 0 1; 1 0 -1 1; 0 0 -2 1; -1 0 -1 1 ]'.*[10;10;10;14] + [0;0;-15;0];
+% waypoints = [ 0 0 0 1; 1 1 0 1; 0 2 0 1; -1 1 0 1]'.*[10;10;10;14] + [0;0;-5;0];
 
 %% load physical copter parameters
 copter = copterLoadParams( 'copter_params_Minnie' );
