@@ -1,8 +1,9 @@
+% ** init quadcopter Minnie with autopilot Dragonfly
 
 % Disclamer:
 %   SPDX-License-Identifier: GPL-2.0-only
 % 
-%   Copyright (C) 2020-2022 Yannic Beyer
+%   Copyright (C) 2022 Yannic Beyer
 %   Copyright (C) 2022 TU Braunschweig, Institute of Flight Guidance
 % *************************************************************************
 
@@ -10,30 +11,11 @@
 addPathMinnie();
 clc_clear;
 
-%% initializing waypoint parameters
-% Create waypoints
+%% waypoints
 
-waypoints = [1 -1 -0.2; 2 0 -0.1; 1 1 -0.1; -1 -1 -0.1; -2 0 -0.1; -1 1 -0.2]'*50;
-cycle = true;
-% degree of polynomial
-degree = 5;
-
-% Create emptry trajectory with a maximum space for 10 waypoints
-traj_size = size(waypoints,2);
-[traj_empty] = trajInit(traj_size, degree);
-
-% Create simulink bus definition
-trajectoryBus = struct2bus_(traj_empty);
-
-% compute trajectory
-traj = trajFromWaypoints(traj_empty, waypoints, degree, cycle);
-
-
-%% wrong name workaround
-%section = sections;
-%trajectoryBus.Elements(3).DataType = "section";
-%clear sections;
-%
+waypoints = [1 -1 -0.2; 2 0 -0.1; 1 1 -0.1; -1 -1 -0.1; -2 0 -0.1; -1 1 -0.2]'.*[10;2;100]*0.5;
+waypoints = [ 0 0 0; 1 0 -1; 0 0 -2; -1 0 -1 ]'*10 + [0;0;-15];
+% waypoints = [ 0 0 0; 1 1 0; 0 2 0; -1 1 0 ]'*10 + [0;0;-5];
 
 %% load physical copter parameters
 copter = copterLoadParams( 'copter_params_Minnie' );
@@ -41,11 +23,8 @@ copter = copterLoadParams( 'copter_params_Minnie' );
 %% environment parameters
 envir = envirLoadParams('params_envir','envir',0);
 
-%% controller parameters
-% load parameters
-fm_Traj = fmCopterLoiterIndiLoadParams( 'fmCopterLoiterIndi_params_Minnie' );
-
-%adding waypoint parameters
+%% autopilot parameters
+ap_dragonfly = apCopterDragonflyLoadParams( 'apCopterDragonfly_params_Minnie' );
 
 %% joystick
 jystck = joystickLoadParams( 'joystick_params_Xbox_360', 2, 0 );
@@ -74,9 +53,5 @@ fg.remoteURL = '127.0.0.1';
 % fdm receive port of Flight Gear
 fg.remotePort = 5502;
 
-%% Set pacer parameters
-pacer.pace = 1;
-pacer.sample_time = 1/100;
-
 %% Open Simulink model
-open_model('QuadcopterSimModel_INDI_Traj')
+open_model('QuadcopterSimModel_Dragonfly')
