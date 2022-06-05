@@ -8,7 +8,7 @@ Moreover, there are interfaces to external programs like FlightGear (for visuali
 
 ## Motivation
 
-It is sometimes not clear how to get new aircraft configurations to fly with existing software such as ArduCopter or PX4.
+It is sometimes not clear how to get new aircraft configurations to fly with existing software such as ArduPilot or PX4.
 With such software, you usually have no insight into the dynamics of the open and closed loop of the aircraft and are limited to an empirical controller design through flight tests or simulations. 
 This project provides the opportunity to design controllers specifically in MATLAB/Simulink.
 First, you can quickly parameterize existing aircraft models or easily create new aircraft models based on LADAC building blocks.
@@ -25,7 +25,7 @@ Finally, you can test your software in a software-in-the-loop simulation before 
 	   Aerospace Blockset, Aerospace Toolbox, MATLAB Coder, MATLAB Compiler, 
 	   Simulink Control Design, Simulink Coder depending on what you want to do.
 
-- ** Remote control:**  
+- **Remote control:**  
   You can use a remote control via USB if you have one.
 
 - **FlightGear:** 
@@ -34,7 +34,6 @@ Finally, you can test your software in a software-in-the-loop simulation before 
 
 - **ArduPilot SITL:**  
   You might install [ArduPilot SITL](https://ardupilot.org/dev/docs/sitl-simulator-software-in-the-loop.html) if you want to do software in the loop simulations.
-        
 
 - **Ground control station:**  
   You might install a ground control station like QGroundControl or MissionPlanner
@@ -76,19 +75,19 @@ Finally, you can test your software in a software-in-the-loop simulation before 
         This will open FlightGear and load an IRIS quadcopter animation (for visualization 
         only, the computation is carried out by MATLAB).
 
-- Use the dynamics model of MATLAB/Simulink for software in the loop simulation of ArduCopter (controller runs in ArduCopter):  
-  1. Run a new MATLAB/Simulink simulation with Bebop2 quadcopter with the ArduCopter SITL interface:
+- Use the dynamics model of MATLAB/Simulink for software in the loop simulation of ArduPilot (controller runs in ArduPilot):  
+  1. Run a new MATLAB/Simulink simulation with Bebop2 quadcopter with the ArduPilot SITL interface:
       ```
       cd('workbenches/Bebop2')
       init_quadcopter_Bebop2_ArduPilot_SITL
       sim('QuadcopterSimModel_ArduCopter_SITL')
       ```
-  2. Run ArduCopter SITL in Gazebo mode from terminal (sim_vehicle.py must be on the path or you find it in Tools/autotest/).
+  2. Run ArduPilot SITL in Gazebo mode from terminal (sim_vehicle.py must be on the path or you find it in Tools/autotest/).
 	 You also have to specify the ArduPilot parameters file of the Bebop2 with the `add-param-file` parameter: 
         ```
 		sim_vehicle.py -v ArduCopter --model=gazebo --add-param-file=<path-to-multicopter>/libraries/ladac-examples-data/ArduPilot_Frame_params/Parrot_Bebop2_MATLAB_SITL.param
         ```
-  3. Control the quadcopter from ArduCopter. Therefore, you should use
+  3. Control the quadcopter from ArduPilot. Therefore, you should use
 	   a ground control station (read QGroundControl or MissionPlanner documentation) or the
 	   [MAVProxy command prompt](https://ardupilot.org/dev/docs/copter-sitl-mavproxy-tutorial.html#copter-sitl-mavproxy-tutorial). 
 
@@ -102,8 +101,8 @@ the physical model as well as of the controller. There are simulation
 slx-file (e.g. `models/QuadcoterSimModel_...`) for different kinds of vehicles
 and different types of controllers.
 
-### General use of ArduCopter SITL
-Standard ArduCopter flight modes will only work if you load appropriate parameters for you vehicle.
+### General use of ArduPilot SITL
+Standard ArduPilot flight modes will only work if you load appropriate parameters for you vehicle.
 The default parameters (e.g. `-f gazebo-iris`) only work for similar quadcopters (e.g. IRIS quadcopter).
 For other vehicles you have to load different parameters using the `--add-param-file option`.
 For some vehicles you find the parameters in `<path-to-ardupilot>/Tools/Frame_params/`.
@@ -149,8 +148,8 @@ After adjusting and running the initialization script, you should be able to run
 If the controller does not perform as expected, check if you followed all of the above steps carefully. Moreover, you could check again all your controller parameters.
 Otherwise you should report a bug.
 
-### Implement controllers in ArduCopter:  
-You can implement you controllers in ArduCopter to quickly proceed to flight tests, see [ArduPilot Custom Controller](https://github.com/iff-gsc/ladac/tree/main/utilities/interfaces_external_programs/ArduPilot_custom_controller).
+### Implement controllers in ArduPilot:  
+You can implement you controllers in ArduPilot to quickly proceed to flight tests, see [ArduPilot Custom Controller](https://github.com/iff-gsc/ladac/tree/main/utilities/interfaces_external_programs/ArduPilot_custom_controller).
 
 
 ## Contribute
