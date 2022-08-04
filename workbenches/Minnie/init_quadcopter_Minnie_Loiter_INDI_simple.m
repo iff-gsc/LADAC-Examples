@@ -34,10 +34,7 @@ IC.omega_mot = [ 1; 1; 1; 1 ] * 843;
 grnd = groundLoadParams( 'params_ground_default' );
 
 %% reference position lat, lon, alt
-% initial latitude, in deg
-pos_ref.lat = 37.6117;
-% initial longitude, in deg
-pos_ref.lon = -122.37822;
+pos_ref = posRefLoadParams( 'reference_position_params_default' );
 % initial altitude, in m
 pos_ref.alt = 10;
 
