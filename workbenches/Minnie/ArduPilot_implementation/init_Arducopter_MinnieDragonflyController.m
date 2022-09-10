@@ -1,4 +1,9 @@
 % init Arducopter Interface for quadcopter Minnie with autopilot Dragonfly
+% 
+% ATTENTION:
+%   THE FLIGHT TEST WITH THIS VERSION WAS NOT A SUCCESS!
+%   The copter simply flew straight up for reasons as yet unexplained, even
+%   when Custom Guided Mode was deactivated.
 
 % Disclamer:
 %   SPDX-License-Identifier: GPL-2.0-only
