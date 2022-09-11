@@ -18,7 +18,7 @@ envir = envirLoadParams('params_envir','envir',0);
 
 %% controller parameters
 % load parameters
-fm_loiter = fmCopterLoiterIndiLoadParams( 'fmCopterLoiterIndi_params_muetze' );
+fm_loiter = loadParams( 'fmCopterLoiterIndi_params_muetze' );
 
 %% joystick
 jystck = joystickLoadParams( 'joystick_params_Xbox_360', 2, 0 );

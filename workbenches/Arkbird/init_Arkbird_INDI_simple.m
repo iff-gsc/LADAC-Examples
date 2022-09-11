@@ -17,7 +17,7 @@ tailsitter = tailsitterLoadParams( 'tailsitter_params_Arkbird' );
 envir = envirLoadParams('envir_params_default','envirBus',0);
 
 %% controller parameters
-fm_atti = fmCopterAttiIndiLoadParams( 'fm_copter_atti_indi_params_Arkbird' );
+fm_atti = loadParams( 'fm_copter_atti_indi_params_Arkbird' );
 
 %% joystick
 jystck = joystickLoadParams( 'joystick_params_Xbox_360', 2, -1 );

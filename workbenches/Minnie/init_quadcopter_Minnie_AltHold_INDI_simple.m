@@ -18,7 +18,7 @@ envir = envirLoadParams('params_envir','envir',0);
 
 %% controller parameters
 % load parameters
-fm_alt_hold = fmCopterAltHoldIndiLoadParams( 'fmCopterAltHoldIndi_params_Minnie' );
+fm_alt_hold = loadParams( 'fmCopterAltHoldIndi_params_Minnie' );
 
 %% joystick
 jystck = joystickLoadParams( 'joystick_params_Xbox_360', 2, 0 );
@@ -43,10 +43,6 @@ pos_ref.alt = 10;
 fg.remoteURL = '127.0.0.1';
 % fdm receive port of Flight Gear
 fg.remotePort = 5502;
-
-%% Set pacer parameters
-pacer.pace = 1;
-pacer.sample_time = 1/100;
 
 %% Open Simulink model
 open_model('QuadcopterSimModel_INDI_simple_AltHold')

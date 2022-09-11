@@ -12,8 +12,8 @@ addPathMinnie();
 clc_clear;
 
 %% waypoints
-
-waypoints = [ 0 0 0 1; 1 0 -1 1; 0 0 -2 1; -1 0 -1 1 ]'.*[10;10;10;14] + [0;0;-15;0];
+% a = V^2/r = 14^2/10 = 2*g
+waypoints = [ 0 0 0 1; 1 0 -1 1; 0 0 -2 1; -1 0 -1 1 ]'.*[10;10;10;14*1.5] + [0;0;-15;0];
 % waypoints = [ 0 0 0 1; 1 1 0 1; 0 2 0 1; -1 1 0 1]'.*[10;10;10;14] + [0;0;-5;0];
 
 %% load physical copter parameters
@@ -23,7 +23,8 @@ copter = copterLoadParams( 'copter_params_Minnie' );
 envir = envirLoadParams('params_envir','envir',0);
 
 %% autopilot parameters
-ap_dragonfly = apCopterDragonflyLoadParams( 'apCopterDragonfly_params_Minnie' );
+% ap_dragonfly = loadParams( 'apCopterDragonfly_params_Minnie' );
+ap_dragonfly = apCopterDragonflyAutoCreate( copter );
 
 %% joystick
 jystck = joystickLoadParams( 'joystick_params_Xbox_360', 2, 0 );
