@@ -117,36 +117,8 @@ Muetze is very similar to IRIS. That is why ArduCopter works with `-f gazebo-iri
 
 Please have a look at the LADAC README.
 	
-### Design Incremental Nonlinear Dynamic Inversion (INDI) controllers:
-There are control design tools in the `tools/` subfolder.
-There are multiple controllers and flightmodes available in the subfolder `libraries/ladac/control/flight_modes` - take a look at them!
-You can adjust/design the parameters of an existing controller as follows.
-If you want to add a new controller, you have to create and add a Simulink block to the library.
-1. Create a physical model as described in the section [General use of the MATLAB/Simulink files](#general-use-of-the-matlab) (take a look at the `copterLoadParams` function and create a parameters file based on the `copter_params_default` template). Therefore, you should create a new subfolder in the `workbenches` subfolder.
-2. Initialize the physical model so that you have a `copter` struct in your MATLAB workspace.
-3. The goal is to create a flight mode parameters file based on the available flight modes (attitude, altitude hold, loiter). E.g. for the loiter flight mode, take a look at the `fmCopterLoiterIndiLoadParams` function and the `fm_copter_loiter_indi_params_default` template.
-These parameter files contain additional parameter files to initialize the reference model parameters, the control allocation parameters etc. 
-Make copies of these template (default) files and replace the parameters in the next steps.
-There are different types of parameters:
-	- **reference models (rm):** define these parameters directly based on your requirements!  
-	- **control allocation (ca):** define these parameters directly based on your requirements!  
-	- **sensor filter (sens_filt):** defaults are recommended.
-	- **motor time constant:** insert the motor time constants (usually `copter.motor.R*copter.prop.I/copter.motor.KT^2` is a good guess).
-	- **control effectiveness:** see step 4.
-	- **controller gains (K):** see step 5.  
-The reference model parameters and the control allocation parameters must be replaced based on the requirements!
-4. Call the function `indiCopterCntrlEffect`. You will get the control effectiveness of the multicoter. 
-Copy and paste the optained control effectiveness variables to your controller parameters file.
-5. Call the function `indiCntrlGainAltHold` to compute the feedback gain of the inner loop controller (attitude control with altitude hold - can also be used for attitude control).
-Therefore, you can use the `indi_cntrl_gain_alt_hold_example` script in the first place. 
-You may want to adjust the weighting parameters according to the instructions in the script.
-Make a copy of the example script and paste it to your workbenches subfolder.
-Rename it and make your adjustments.
-You can use a similar procedure if you want to design the feedback gain for the horizontal position control loop (take a look at the script `indi_cntrl_gain_loiter_cascaded_example`).
-6. You can now finalize your initialization script in your workbenches subfolder like `init_quadcopter_Bebop2_Loiter_INDI_simple`.
-After adjusting and running the initialization script, you should be able to run the corresponding Simulink model located in the `models/` subfolder like `QuadcopterSimModel_INDI_Loiter_simple`.
-If the controller does not perform as expected, check if you followed all of the above steps carefully. Moreover, you could check again all your controller parameters.
-Otherwise you should report a bug.
+### Design INDI controller for quadrotor
+Have a look at the [LindiCopter autopilot](https://github.com/iff-gsc/ladac/tree/main/control/autopilots/LindiCopter).
 
 ### Implement controllers in ArduPilot:  
 You can implement you controllers in ArduPilot to quickly proceed to flight tests, see [ArduPilot Custom Controller](https://github.com/iff-gsc/ladac/tree/main/utilities/interfaces_external_programs/ArduPilot_custom_controller).
