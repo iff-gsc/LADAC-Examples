@@ -23,8 +23,7 @@ copter = copterLoadParams( 'copter_params_Minnie' );
 envir = envirLoadParams('params_envir','envir',0);
 
 %% autopilot parameters
-% ap_dragonfly = loadParams( 'apCopterDragonfly_params_Minnie' );
-ap_dragonfly = apCopterDragonflyAutoCreate( copter );
+lindiCopter_params = lindiCopterAutoCreate( copter );
 
 %% joystick
 jystck = joystickLoadParams( 'joystick_params_Xbox_360', 2, 0 );
