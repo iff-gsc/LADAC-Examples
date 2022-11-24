@@ -53,4 +53,4 @@ fg.remoteURL = '127.0.0.1';
 fg.remotePort = 5502;
 
 %% Open Simulink model
-open_model('QuadcopterSimModel_Dragonfly')
+open_model('QuadcopterSimModel_LindiCopter')

@@ -20,16 +20,15 @@ addPathMinnie();
 clc_clear;
 
 %% autopilot parameters
-ap_dragonfly = apCopterDragonflyLoadParams( 'apCopterDragonfly_params_Minnie' );
+copter = copterLoadParams( 'copter_params_Minnie' );
+lindiCopter_params = lindiCopterAutoCreate( copter );
 
 %% initialize the Ardupilot Interface
-initInterfaceBuses
+ardupilotCreateInputBuses();
 
 %% change the main struct from double to float
-sample_time = ap_dragonfly.sample_time;
-ap_dragonfly = structDouble2Single(ap_dragonfly);
-ap_dragonfly.sample_time = double(sample_time);
-clear sample_time;
+lindiCopter_params = structDouble2Single(lindiCopter_params);
+lindiCopter_params.ts = double(lindiCopter_params.ts);
 
 %% open Simulink model
-open ArduCopter_MinnieDragonflyController.slx
+open ArduCopter_MinnieLindiCopter.slx
