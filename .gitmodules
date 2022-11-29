@@ -1,6 +1,6 @@
 [submodule "libraries/ladac"]
-	path = libraries/ladac
+	path = modules/ladac
 	url = ../LADAC.git
 [submodule "libraries/ladac-examples-data"]
-	path = libraries/ladac-examples-data
+	path = modules/ladac-examples-data
 	url = ../LADAC-Examples-Data.git
