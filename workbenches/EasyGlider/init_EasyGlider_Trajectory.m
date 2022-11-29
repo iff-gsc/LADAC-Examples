@@ -25,7 +25,7 @@ traj_size = size(waypoints,2);
 [traj_empty] = trajInit(traj_size, degree);
 
 % Create simulink bus definition
-trajectoryBus = struct2bus_(traj_empty);
+struct2bus(traj_empty,'trajectoryBus');
 
 %% compute cubic-spline trajectory
 

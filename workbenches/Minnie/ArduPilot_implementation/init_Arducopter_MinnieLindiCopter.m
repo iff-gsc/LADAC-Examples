@@ -10,7 +10,7 @@
 % 
 % 	Copyright (C) 2022 Yannic Beyer
 % 	Copyright (C) 2022 Fabian Guecker
-% 	Copyright (C) 2022 Eiker Bremers
+% 	Copyright (C) 2022 Eike Bremers
 %   Copyright (C) 2022 TU Braunschweig, Institute of Flight Guidance
 % *************************************************************************
 
