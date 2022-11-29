@@ -5,6 +5,16 @@ There are multicopter, airplane and eVTOL flight dynamic models as well as fligh
 The flight dynamic models and the flight controllers are based on LADAC and written in MATLAB/Simulink.
 Moreover, there are interfaces to external programs like FlightGear (for visualization) and ArduPilot (for software in the loop tests and flight tests).
 
+<div align="center">
+<h3>Quadrotor Flight Path Control Demo</h3>
+  <a href="https://youtu.be/NKl482yJtZI">
+    <img 
+      src="https://img.youtube.com/vi/NKl482yJtZI/0.jpg" 
+      alt="Quadrotor Flight Path Control Demo" 
+      style="width:50%;">
+  </a>
+</div>
+
 
 ## Motivation
 
