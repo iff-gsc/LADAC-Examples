@@ -60,9 +60,9 @@ Finally, you can test your software in a software-in-the-loop simulation before 
 
 - Start a simulation of quadcopter Bebop2 with loiter controller (both quadcopter dynamics and controller run in MATLAB/Simulink):  
   1. Open MATLAB/Simulink.
-  2. Run the parameters file `workbenches/Bebop2/init_quadcopter_Bebop2_Loiter_INDI_simple`.
+  2. Run the parameters file `Copter/Bebop2/init_quadcopter_Bebop2_Loiter_INDI_simple`.
       ```
-      cd('workbenches/Bebop2')
+      cd('Copter/Bebop2')
       init_quadcopter_Bebop2_Loiter_INDI_simple
       ```
   3. Plug in a remote control via USB. If you do not have connected a remote control, set: `jystck.enable = 0` (else an error will accur).  
@@ -80,7 +80,7 @@ Finally, you can test your software in a software-in-the-loop simulation before 
 - Visualize simulation with FlightGear:  
   1. Run the start script of FlightGear by running runfg_IRIS.bat (Windows) or runfg_IRIS.sh (Linux):
         ```
-        ./FlightGear/runfg_IRIS.sh
+        ./modules/ladac-examples-data/FlightGear/runfg_IRIS.sh
         ```
         This will open FlightGear and load an IRIS quadcopter animation (for visualization 
         only, the computation is carried out by MATLAB).
@@ -88,7 +88,7 @@ Finally, you can test your software in a software-in-the-loop simulation before 
 - Use the dynamics model of MATLAB/Simulink for software in the loop simulation of ArduPilot (controller runs in ArduPilot):  
   1. Run a new MATLAB/Simulink simulation with Bebop2 quadcopter with the ArduPilot SITL interface:
       ```
-      cd('workbenches/Bebop2')
+      cd('Copter/Bebop2')
       init_quadcopter_Bebop2_ArduPilot_SITL
       sim('QuadcopterSimModel_ArduCopter_SITL')
       ```
@@ -106,9 +106,9 @@ Finally, you can test your software in a software-in-the-loop simulation before 
 ## How to use?
 
 ### General use of the MATLAB/Simulink files
-There are initialization m-files in multiple workbenches subfolders (e.g. `workbenches/Bebop2/init_...`) to initialize the parameters of
+There are initialization m-files in multiple subfolders (e.g. `Copter/Bebop2/init_...`) to initialize the parameters of
 the physical model as well as of the controller. There are simulation
-slx-file (e.g. `models/QuadcoterSimModel_...`) for different kinds of vehicles
+slx-file (e.g. `Copter/models/QuadcoterSimModel_...`) for different kinds of vehicles
 and different types of controllers.
 
 ### General use of ArduPilot SITL
