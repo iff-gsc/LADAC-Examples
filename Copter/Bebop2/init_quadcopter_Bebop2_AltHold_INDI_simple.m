@@ -18,7 +18,7 @@ envir = envirLoadParams('params_envir','envir',0);
 
 %% controller parameters
 % load parameters
-fm_alt_hold = fmCopterAltHoldIndiLoadParams( 'fmCopterAltHoldIndi_params_bebop2' );
+fm_alt_hold = loadParams( 'fmCopterAltHoldIndi_params_bebop2' );
 
 %% joystick
 jystck = joystickLoadParams( 'joystick_params_Xbox_360', 2, 0 );
