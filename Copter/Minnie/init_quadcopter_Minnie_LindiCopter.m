@@ -24,6 +24,7 @@ envir = envirLoadParams('params_envir','envir',0);
 
 %% autopilot parameters
 lindi = lindiCopterAutoCreate( copter );
+lindi.traj.wpmax = 4;
 
 %% joystick
 joystick = joystickLoadParams( 'joystick_params_Xbox_360', 2, 0 );
