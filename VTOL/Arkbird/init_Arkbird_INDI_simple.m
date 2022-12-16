@@ -23,7 +23,5 @@ fm_atti = loadParams( 'fm_copter_atti_indi_params_Arkbird' );
 jystck = joystickLoadParams( 'joystick_params_Xbox_360', 2, -1 );
 
 %% open simulink file
-% set simulation pace to real time
-pace = 1;
 % open slx
 open_model('TailsitterSimModel_INDI_simple');

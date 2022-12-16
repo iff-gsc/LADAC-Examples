@@ -46,9 +46,5 @@ fg.remoteURL = '127.0.0.1';
 % fdm receive port of Flight Gear
 fg.remotePort = 5502;
 
-%% Set pacer parameters
-pacer.pace = 1;
-pacer.sample_time = 1/100;
-
 %% Open Simulink model
 open_model('QuadcopterSimModel_INDI_Loiter_simple')

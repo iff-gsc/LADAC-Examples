@@ -42,9 +42,5 @@ fg.remotePort = 5502;
 %% ArduPilot SITL parameters
 SITL.sample_time = 1/400;
 
-%% Set pacer parameters
-pacer.pace = 1;
-pacer.sample_time = 1/100;
-
 %% Open Simulink model
 open_model('QuadcopterSimModel_ArduCopter_SITL')

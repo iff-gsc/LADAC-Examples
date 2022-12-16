@@ -21,7 +21,5 @@ envir = envirLoadParams('envir_params_default','envirBus',0);
 SITL.sample_time = 1/300;
 
 %% open simulink file
-% set simulation pace to real time
-pace = 1;
 % open slx
 open_model('TailsitterSimModel_ArduPilot_SITL');
