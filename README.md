@@ -38,9 +38,8 @@ Finally, you can test your software in a software-in-the-loop simulation before 
 - **Remote control:**  
   You can use a remote control via USB if you have one.
 
-- **FlightGear:** 
-  1. You also should install FlightGear for visualization. Tested versions are FlightGear 3.4.0 and FlightGear 2019.1.1.
-  2. On Windows you have to copy and paste the folder FlightGear/<models> into $FG_HOME/Aircraft/
+- **FlightGear:**  
+  You also should install FlightGear for visualization. Normally, any version should work.
 
 - **ArduPilot SITL:**  
   You might install [ArduPilot SITL](https://ardupilot.org/dev/docs/sitl-simulator-software-in-the-loop.html) if you want to do software in the loop simulations.
