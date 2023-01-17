@@ -1,7 +1,7 @@
 function [] = addPathIris()
 
 % Disclamer:
-%   SPDX-License-Identifier: GPL-2.0-only
+%   SPDX-License-Identifier: GPL-3.0-only
 % *************************************************************************
 
 this_file_path = fileparts(mfilename('fullpath'));

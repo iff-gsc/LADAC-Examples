@@ -1,7 +1,7 @@
 function [] = addPathLadacExamples()
 
 % Disclamer:
-%   SPDX-License-Identifier: GPL-2.0-only
+%   SPDX-License-Identifier: GPL-3.0-only
 % *************************************************************************
 
 % go to correct directory
