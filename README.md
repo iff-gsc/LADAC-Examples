@@ -57,45 +57,49 @@ Finally, you can test your software in a software-in-the-loop simulation before 
 
 ## Examples
 
-- Start a simulation of quadcopter Bebop2 with loiter controller (both quadcopter dynamics and controller run in MATLAB/Simulink):  
+- **Start a simulation of quadcopter Bebop2 with loiter controller (both quadcopter dynamics and controller run in MATLAB/Simulink):**  
   1. Open MATLAB/Simulink.
-  2. Run the parameters file `Copter/Bebop2/init_quadcopter_Bebop2_Loiter_INDI_simple`.
+  2. Run the Bebop2 initialization file [`Copter/Bebop2/init_quadcopter_Bebop2_Loiter_INDI_simple`](Copter/Bebop2/init_quadcopter_Bebop2_Loiter_INDI_simple.m).
       ```
       cd('Copter/Bebop2')
       init_quadcopter_Bebop2_Loiter_INDI_simple
       ```
-  3. Plug in a remote control via USB. If you do not have connected a remote control, set: `jystck.enable = 0` (else an error will accur).  
-  By default, the calibration settings of the Xbox-360 joystick are used as you can see in the init script `init_quadcopter_Bebop2_Loiter_INDI_simple` in the line `jystck = joystickLoadParams( 'joystick_params_Xbox_360', 2, 0 );`.  
-  This calibration settings may not be compatible with your joystick! Therefore, you should [test and calibrate your joystick](https://github.com/iff-gsc/ladac/tree/main/control/joystick).
-  4. Run the Simulink file `QuadcopterSimModel_INDI_Loiter_simple.slx` (should open after step 2) to start the simulation. You can either control the system with the remote
+  3. Plug in a remote control via USB.  
+  By default, the calibration settings of the Xbox-360 joystick are used as you can see in the init script [`init_quadcopter_Bebop2_Loiter_INDI_simple`](Copter/Bebop2/init_quadcopter_Bebop2_Loiter_INDI_simple.m#L24).  
+  This calibration settings may not be compatible with your joystick! Therefore, you should [test and calibrate your joystick](https://github.com/iff-gsc/LADAC/tree/main/control/joystick#readme).  
+  If you do not have connected a remote control, set [`jystck.enable = 0`](Copter/Bebop2/init_quadcopter_Bebop2_Loiter_INDI_simple.m#L25) (else an error will occur).
+  1. Run the Simulink file [`QuadcopterSimModel_INDI_Loiter_simple.slx`](Copter/models/QuadcopterSimModel_INDI_Loiter_simple.slx) (should open after step 2) to start the simulation. You can either control the system with the remote
         control (vertical velocity, yaw rate, pitch angle, roll angle) or dummy
-	   inputs will be performed. 
+	   inputs will be performed.
       ```
       sim('QuadcopterSimModel_INDI_Loiter_simple')
       ```
-  5. You can view the system outputs in the block visualization clicking on the scopes. 
-	   However, this is not visually intuitive.
+  2. You can view the system outputs in the block visualization clicking on the scopes. However, this is not visually intuitive.
 
-- Visualize simulation with FlightGear:  
-  1. Run the start script of FlightGear by running runfg_IRIS.bat (Windows) or runfg_IRIS.sh (Linux):
+- **Visualize simulation with FlightGear:**  
+  1. Run the start script of FlightGear by running [`runfg_IRIS.bat`](https://github.com/iff-gsc/LADAC-Examples-Data/tree/main/FlightGear/runfg_IRIS.bat) (Windows) or [`runfg_IRIS.sh`](https://github.com/iff-gsc/LADAC-Examples-Data/tree/main/FlightGear/runfg_IRIS.sh) (Linux):
         ```
         ./modules/ladac-examples-data/FlightGear/runfg_IRIS.sh
         ```
         This will open FlightGear and load an IRIS quadcopter animation (for visualization 
         only, the computation is carried out by MATLAB).
 
-- Use the dynamics model of MATLAB/Simulink for software in the loop simulation of ArduPilot (controller runs in ArduPilot):  
+- **Use the dynamics model of MATLAB/Simulink for software in the loop simulation of ArduPilot (controller runs in ArduPilot):**  
   1. Run a new MATLAB/Simulink simulation with Bebop2 quadcopter with the ArduPilot SITL interface:
       ```
       cd('Copter/Bebop2')
       init_quadcopter_Bebop2_ArduPilot_SITL
       sim('QuadcopterSimModel_ArduCopter_SITL')
       ```
-  2. Run ArduPilot SITL in Gazebo mode from terminal (sim_vehicle.py must be on the path or you find it in Tools/autotest/).
-	 You also have to specify the ArduPilot parameters file of the Bebop2 with the `add-param-file` parameter: 
-        ```
-		sim_vehicle.py -v ArduCopter --model=gazebo --add-param-file=<path-to-multicopter>/libraries/ladac-examples-data/ArduPilot_Frame_params/Parrot_Bebop2_MATLAB_SITL.param
-        ```
+  2. Run ArduPilot SITL in Gazebo mode from terminal (`sim_vehicle.py` must be on the path or you find it in the [ArduPilot](https://github.com/ArduPilot/ardupilot) repository in `Tools/autotest/`). Make sure that you have a proper ArduPilot configuration file for the ArduPilot SITL where you have set the joystick inputs etc. correctly. You should use the provided [ArduPilot parameters file of the Bebop2](https://github.com/iff-gsc/LADAC-Examples-Data/tree/main/ArduPilot_params/Parrot_Bebop2_MATLAB_SITL.param) as a basis for the configuration, since the sensor filter and control parameters are already correctly set here for the Bebop2 Simulink model. Finaly you can start the ArduPilot SITL with the `--add-param-file` option (here, our parameter file is used as an example): 
+      ```
+      sim_vehicle.py -v ArduCopter --model=gazebo --add-param-file=<path-to-repository>/modules/ladac-examples-data/ArduPilot_params/Parrot_Bebop2_MATLAB_SITL.param
+      ```
+      The dynamics model in MATLAB/Simulink is tested with ArduCopter 4.2.0. If you run into any problems try checking out the older ArduCopter release in the ArduPilot repository with:
+      ```
+      git checkout Copter-4.2.0
+      git submodule update --init --recursive
+      ```
   3. Control the quadcopter from ArduPilot. Therefore, you should use
 	   a ground control station (read QGroundControl or MissionPlanner documentation) or the
 	   [MAVProxy command prompt](https://ardupilot.org/dev/docs/copter-sitl-mavproxy-tutorial.html#copter-sitl-mavproxy-tutorial). 
@@ -113,8 +117,8 @@ and different types of controllers.
 ### General use of ArduPilot SITL
 Standard ArduPilot flight modes will only work if you load appropriate parameters for you vehicle.
 The default parameters (e.g. `-f gazebo-iris`) only work for similar quadcopters (e.g. IRIS quadcopter).
-For other vehicles you have to load different parameters using the `--add-param-file option`.
-For some vehicles you find the parameters in `<path-to-ardupilot>/Tools/Frame_params/`.
+For other vehicles you have to load different parameters using the `--add-param-file` option.
+For some vehicles you find the parameters in [`modules/ladac-examples-data/ArduPilot_params`](https://github.com/iff-gsc/LADAC-Examples-Data/tree/main/ArduPilot_params). You can use these parameter files as a basis for your own configuration and add your joystick configuration, for example.
 
 - **IRIS:**  
 You can load the ArduPilot IRIS parameters with the `-f` parameter: `sim_vehicle.py -v ArduCopter -f gazebo-iris --model=gazebo`
@@ -123,14 +127,13 @@ You can load the ArduPilot IRIS parameters with the `-f` parameter: `sim_vehicle
 Muetze is very similar to IRIS. That is why ArduCopter works with `-f gazebo-iris` option.
 
 ### Use of LADAC
+Please have a look at the [LADAC readme](https://github.com/iff-gsc/LADAC#readme).
 
-Please have a look at the LADAC README.
-	
 ### Design INDI controller for quadrotor
-Have a look at the [LindiCopter autopilot](https://github.com/iff-gsc/ladac/tree/main/control/autopilots/LindiCopter).
+Have a look at the [LindiCopter autopilot](https://github.com/iff-gsc/ladac/tree/main/control/autopilots/LindiCopter#readme).
 
 ### Implement controllers in ArduPilot:  
-You can implement you controllers in ArduPilot to quickly proceed to flight tests, see [ArduPilot Custom Controller](https://github.com/iff-gsc/ladac/tree/main/utilities/interfaces_external_programs/ArduPilot_custom_controller).
+You can implement your controllers in ArduPilot to quickly proceed to flight tests, see [ArduPilot Custom Controller](https://github.com/iff-gsc/ladac/tree/main/utilities/interfaces_external_programs/ArduPilot_custom_controller#readme).
 
 
 ## Contribute
@@ -138,7 +141,7 @@ You can implement you controllers in ArduPilot to quickly proceed to flight test
 ### Fix or report bugs
 
 Before reporting a bug, please try the following:
-- check `git status`  
+- check `git status`
 - restart MATLAB/Simulink
 
 Create an issue and provide the following information:

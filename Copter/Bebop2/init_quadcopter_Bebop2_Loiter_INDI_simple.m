@@ -22,6 +22,7 @@ fm_loiter = loadParams( 'fmCopterLoiterIndi_params_bebop2' );
 
 %% joystick
 jystck = joystickLoadParams( 'joystick_params_Xbox_360', 2, 0 );
+jystck.enable = 1;
 
 %% initial conditions (IC)
 % load initial conditions
