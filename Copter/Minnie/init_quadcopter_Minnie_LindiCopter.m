@@ -28,7 +28,6 @@ lindi.traj.wpmax = 4;
 
 %% joystick
 joystick = joystickLoadParams( 'joystick_params_Xbox_360', 2, 0 );
-joystick.enable = 0;
 
 %% initial conditions (IC)
 % load initial conditions
