@@ -1,6 +1,6 @@
-% ** init quadcopter Minnie with autopilot LiniCopter
+% init quadcopter Minnie with autopilot LindiCopter
 
-% Disclamer:
+% Disclaimer:
 %   SPDX-License-Identifier: GPL-3.0-only
 % 
 %   Copyright (C) 2022 Yannic Beyer
@@ -24,7 +24,7 @@ envir = envirLoadParams('params_envir','envir',0);
 
 %% autopilot parameters
 lindi = lindiCopterAutoCreate( copter );
-lindi.traj.wpmax = 4;
+lindi_notune = loadParams( 'lindiCopter_params_notune_default' );
 
 %% joystick
 joystick = joystickLoadParams( 'joystick_params_Xbox_360', 2, 0 );
