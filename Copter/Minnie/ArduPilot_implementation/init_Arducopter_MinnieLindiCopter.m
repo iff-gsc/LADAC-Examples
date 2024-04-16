@@ -20,7 +20,10 @@ clc_clear;
 copter = copterLoadParams( 'copter_params_Minnie' );
 
 %% autopilot parameters
-lindi = lindiCopterAutoCreate( copter );
+lindi = lindiCopterAutoCreate( copter, ...
+                              'caWls_params', 'caWls_params_Minnie', ...
+                              'MtcScaling', 1.2 );
+
 lindi_notune = loadParams( 'lindiCopter_params_notune_default' );
 
 %% initialize the Ardupilot Interface

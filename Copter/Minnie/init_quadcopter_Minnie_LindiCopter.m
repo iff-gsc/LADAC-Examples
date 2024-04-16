@@ -23,7 +23,10 @@ copter = copterLoadParams( 'copter_params_Minnie' );
 envir = envirLoadParams('params_envir','envir',0);
 
 %% autopilot parameters
-lindi = lindiCopterAutoCreate( copter );
+lindi = lindiCopterAutoCreate( copter, ...
+                              'caWls_params', 'caWls_params_Minnie', ...
+                              'MtcScaling', 1.2 );
+
 lindi_notune = loadParams( 'lindiCopter_params_notune_default' );
 
 %% joystick
