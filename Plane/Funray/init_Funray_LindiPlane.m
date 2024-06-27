@@ -31,14 +31,14 @@ airplane.posRef.lon = -122.37822;
 % Inital conditons of rigid-body motion
 airplane.ic.q_bg = euler2Quat([0;0;-1.4]);
 airplane.ic.V_Kb = [15;0;0];
-airplane.ic.s_Kg = [10; -90; 0];
+airplane.ic.s_Kg = [10; 0; 0];
 airplane.ic.omega_Kb = [0; 0; 0];
 
 %% Define waypoints
 waypoints = [ 0 0 0; 0 -1 0; 1 -1 0; 1 0 0 ]'*250 + [0;-100;0];
 
 %% Compute LindiPlane parameters
-lindi = lindiPlaneAutoCreate( airplane, 'SensFilt', [80,1] );
+[lindi,lindi_notune] = lindiPlaneAutoCreate( airplane, 'SensFilt', [50,1], 'AgilityAtti', 1.3, 'AgilityPos', 1.3, 'ServoBoost', 0.6 );
 
 %% Open model
 open_model('AirplaneSimModel_LindiPlane');

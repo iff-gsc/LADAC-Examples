@@ -15,8 +15,10 @@ clc_clear;
 airplane = conventionalAirplaneLoadParams( 'airplane_params_Funray' );
 
 %% Compute LindiPlane parameters
-lindi = lindiPlaneAutoCreate( airplane, 'SensFilt', [80,1] );
+[lindi,lindi_notune] = lindiPlaneAutoCreate( airplane, 'SensFilt', [50,1], 'AgilityAtti', 1.2, 'AgilityPos', 1.0, 'ServoBoost', 0.6 );
+lindi.ceb.scale = 1.2;
 lindi = structDouble2Single(lindi);
+lindi_notune = structDouble2Single(lindi_notune);
 
 %% Init ArduPlane custom controller interface buses
 clearAllBuses();
