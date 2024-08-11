@@ -1,0 +1,150 @@
+# MAVProxy parameter file
+#
+#   Model:      Rooster (Simulink)
+#   Version:    ArduCopter V4.2.0
+#   ATTENTION:  This config is for a random commit of ArduCopter, which lays somewhere between the V4.1.5 release and the 4.2.0 release!
+#
+#   Param-File-Version: V0.1
+
+# ----------------- Frame Settings ----------------- #
+FRAME_CLASS,1
+FRAME_TYPE,1
+
+SERVO1_FUNCTION,34
+SERVO2_FUNCTION,35
+SERVO3_FUNCTION,33
+SERVO4_FUNCTION,36
+
+# ----------------- Arming Settings ----------------- #
+ARMING_RUDDER,0
+
+# ----------------- RPYT ----------------- #
+RCMAP_PITCH,2
+RCMAP_ROLL,1
+RCMAP_THROTTLE,3
+RCMAP_YAW,4
+
+# ----------------- Flight Mode ----------------- #
+FLTMODE1,0
+FLTMODE2,5
+FLTMODE3,29
+FLTMODE4,0
+FLTMODE5,0
+FLTMODE6,0
+FLTMODE_CH,5
+
+# ----------------- Channels ----------------- #
+RC7_OPTION,84
+RC9_OPTION,41
+RC10_OPTION,31
+
+# ----------------- Logging ----------------- #
+LOG_DISARMED,0
+LOG_FILE_DSRMROT,1
+#LOG_BITMASK,196607
+
+# ----------------- Motor and Battery ----------------- #
+#MOT_BAT_VOLT_MIN,13.20
+#MOT_BAT_VOLT_MAX,17.40
+
+MOT_SPIN_ARM,0.02
+MOT_SPIN_MIN,0.05
+MOT_SPIN_MAX,0.95
+
+MOT_THST_EXPO,0.55
+MOT_THST_HOVER,0.210
+
+MOT_SPOOL_TIME,0.05
+
+#BATT_CAPACITY,1300
+
+# ----------------- Filter ----------------- #
+INS_ACCEL_FILTER,80
+INS_GYRO_FILTER,80
+
+# ----------------- Rate Controller ----------------- #
+ATC_RAT_RLL_D,0.001246
+ATC_RAT_RLL_FF,0.000000
+ATC_RAT_RLL_FLTD,50.000000
+ATC_RAT_RLL_FLTE,0.000000
+ATC_RAT_RLL_FLTT,40.000000
+#ATC_RAT_RLL_I,0.300000
+ATC_RAT_RLL_I,0.600000
+ATC_RAT_RLL_IMAX,0.500000
+ATC_RAT_RLL_P,0.061220
+ATC_RAT_RLL_SMAX,0.000000
+
+ATC_RAT_PIT_D,0.001602
+ATC_RAT_PIT_FF,0.000000
+ATC_RAT_PIT_FLTD,50.000000
+ATC_RAT_PIT_FLTE,0.000000
+ATC_RAT_PIT_FLTT,40.000000
+#ATC_RAT_PIT_I,0.449999
+ATC_RAT_PIT_I,0.900000
+ATC_RAT_PIT_IMAX,0.500000
+ATC_RAT_PIT_P,0.091717
+ATC_RAT_PIT_SMAX,0.000000
+
+ATC_RAT_YAW_D,0.001000
+ATC_RAT_YAW_FF,0.000000
+ATC_RAT_YAW_FLTD,50.000000
+ATC_RAT_YAW_FLTE,0.000000
+ATC_RAT_YAW_FLTT,40.000000
+ATC_RAT_YAW_I,0.017999
+ATC_RAT_YAW_IMAX,0.500000
+ATC_RAT_YAW_P,0.180000
+ATC_RAT_YAW_SMAX,0.000000
+ATC_SLEW_YAW,6000.000000
+
+# ----------------- Rate Limits ----------------- #
+ATC_ACCEL_R_MAX,0
+ATC_ACCEL_P_MAX,0
+ATC_ACCEL_Y_MAX,0
+ATC_RATE_R_MAX,0
+ATC_RATE_P_MAX,0
+ATC_RATE_Y_MAX,0
+
+# ----------------- Angle Controller ----------------- #
+ATC_ANG_PIT_P,18.00
+ATC_ANG_RLL_P,18.00
+ATC_ANG_YAW_P,15.00
+
+# ----------------- Angle Limits ----------------- #
+ANGLE_MAX,8000
+
+# ----------------- AirMode settings ----------------- #
+ATC_THR_MIX_MAN,4.000
+ATC_THR_MIX_MAX,0.500
+ATC_THR_MIX_MIN,0.100
+
+# ----------------- Acro Mode settings ----------------- #
+ACRO_OPTIONS,2
+ACRO_TRAINER,0
+ACRO_THR_MID,0.5
+ACRO_RP_EXPO,0.4000
+ACRO_RP_P,9.0
+ACRO_Y_EXPO,0.2000
+ACRO_Y_P,6.0
+
+# ----------------- Angle Reference Model ----------------- #
+ATC_RATE_FF_ENAB,1
+#ATC_INPUT_TC,0.05
+ATC_ANGLE_BOOST,1
+
+# ----------------- Loiter Limits ----------------- #
+ATC_SLEW_YAW,54000
+LOIT_ACC_MAX,1500.00
+LOIT_ANG_MAX,0.00
+LOIT_BRK_ACCEL,1500.00
+LOIT_BRK_DELAY,0.20
+LOIT_BRK_JERK,2000.00
+LOIT_SPEED,3000.00
+
+# ----------------- Altitude Limits ----------------- #
+PILOT_ACCEL_Z,1000
+PILOT_SPEED_DN,0
+PILOT_SPEED_UP,500
+
+# ----------------- Position Hold settings ----------------- #
+PHLD_BRAKE_ANGLE,3000
+PHLD_BRAKE_RATE,8
