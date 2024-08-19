@@ -30,7 +30,7 @@ function [ ny_du_red, ny_du_dt ] = indiCntrlEffectiveness( A, B, C, D, idx_mot )
 %       39(3), 450-461.
 % 
 
-% Disclamer:
+% Disclaimer:
 %   SPDX-License-Identifier: GPL-3.0-only
 % 
 %   Copyright (C) 2020-2022 Yannic Beyer

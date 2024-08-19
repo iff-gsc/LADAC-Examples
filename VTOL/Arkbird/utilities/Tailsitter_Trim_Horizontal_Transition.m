@@ -1,7 +1,7 @@
 % With this script you can compute multiple trim points for the tailsitter
 % for horizontal steady flight depending on given groundspeeds.
 
-% Disclamer:
+% Disclaimer:
 %   SPDX-License-Identifier: GPL-3.0-only
 % 
 %   Copyright (C) 2020-2022 Yannic Beyer

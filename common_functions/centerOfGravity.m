@@ -13,7 +13,7 @@ function xyz_cg = centerOfGravity( xyz_cg_dist, m ) %#codegen
 %   xyz_cg              center of gravity (3x1) vector, in m
 % 
 
-% Disclamer:
+% Disclaimer:
 %   SPDX-License-Identifier: GPL-3.0-only
 % 
 %   Copyright (C) 2020-2022 Yannic Beyer

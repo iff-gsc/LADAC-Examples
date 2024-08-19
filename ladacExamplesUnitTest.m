@@ -10,7 +10,7 @@
 %   rt = table(runtests('ladacExamplesUnitTest'))
 %   rt = table(runtests('ladacExamplesUnitTest','OutputDetail',0))
 
-% Disclamer:
+% Disclaimer:
 %   SPDX-License-Identifier: GPL-3.0-only
 %
 %   Copyright (C) 2020-2022 Fabian Guecker

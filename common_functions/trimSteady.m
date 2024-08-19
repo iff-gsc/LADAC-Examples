@@ -1,7 +1,7 @@
 function [xTrim,uTrim,op] = trimSteady( model, EulerAngles, EulerAngles_known, V_Kg, V_Kg_known )
 % Search for a specified operating point for the model QuadcopterSimModel.
 
-% Disclamer:
+% Disclaimer:
 %   SPDX-License-Identifier: GPL-3.0-only
 % 
 %   Copyright (C) 2020-2022 Yannic Beyer

@@ -14,7 +14,7 @@ function I = momentOfInertia( xyz_cg_dist, m, xyz_dim ) %#codegen
 %                       frame, in kg.m^2
 % 
 
-% Disclamer:
+% Disclaimer:
 %   SPDX-License-Identifier: GPL-3.0-only
 % 
 %   Copyright (C) 2020-2022 Yannic Beyer

@@ -31,7 +31,7 @@ function [G1,G2] = controlEffectiveness2G1G2( ny_du_red_trim, ny_du_dt_trim, u_t
 %       39(3), 450-461.
 % 
 
-% Disclamer:
+% Disclaimer:
 %   SPDX-License-Identifier: GPL-3.0-only
 % 
 %   Copyright (C) 2020-2022 Yannic Beyer

@@ -28,7 +28,7 @@ function cntrl_effect = indiCopterCntrlEffect( filename )
 %       Conference on Robotics and Automation (ICRA) (pp. 4273-4279). IEEE.
 % 
 
-% Disclamer:
+% Disclaimer:
 %   SPDX-License-Identifier: GPL-3.0-only
 % 
 %   Copyright (C) 2020-2022 Yannic Beyer

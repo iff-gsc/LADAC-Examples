@@ -1,7 +1,7 @@
 function [x,u,op] = tailsitterTrimHorizontal( groundspeed )
 % Search for a specified operating point for the model TailsitterSimModel_Trim.
 
-% Disclamer:
+% Disclaimer:
 %   SPDX-License-Identifier: GPL-3.0-only
 % 
 %   Copyright (C) 2020-2022 Yannic Beyer
