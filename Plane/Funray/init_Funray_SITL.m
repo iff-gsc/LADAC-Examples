@@ -15,6 +15,8 @@ clc_clear;
 airplane = conventionalAirplaneLoadParams( 'airplane_params_Funray' );
 airplane.ic.s_Kg(3) = -5;
 
+channel_idx = 1:7;
+
 % environment parameters
 envir = envirLoadParams( 'envir_params_default', 'envir',0 );
 

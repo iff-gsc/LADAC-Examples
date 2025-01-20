@@ -13,8 +13,8 @@ clc_clear;
 
 %% waypoints
 % a = V^2/r = 14^2/10 = 2*g
-waypoints = [ 0 0 0 1; 1 0 -1 1; 0 0 -2 1; -1 0 -1 1 ]'.*[10;10;10;14*1.0] + [20;0;-15;0];
-% waypoints = [ 0 0 0 1; 1 1 0 1; 0 2 0 1; -1 1 0 1]'.*[10;10;10;14] + [0;0;-5;0];
+waypoints = [ 0 0 0 1; 1 0 -1 1; 0 0 -2 1; -1 0 -1 1 ]'.*[14;14;14;14*1.0] + [20;0;-15;0];
+% waypoints = [ 0 0 0 1; 1 1 0 1; 0 2 0 1; -1 1 0 1]'.*[14;14;14;14] + [0;0;-5;0];
 
 %% load physical copter parameters
 copter = copterLoadParams( 'copter_params_Minnie' );
@@ -26,6 +26,7 @@ envir = envirLoadParams('params_envir','envir',0);
 lindi = lindiCopterAutoCreate( copter, ...
                               'caWls_params', 'caWls_params_Minnie', ...
                               'MtcScaling', 1.2 );
+lindi.atc.rm.leanmax = pi;
 
 lindi_notune = loadParams( 'lindiCopter_params_notune_default' );
 

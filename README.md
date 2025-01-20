@@ -112,7 +112,8 @@ Finally, you can test your software in a software-in-the-loop simulation before 
 There are initialization m-files in multiple subfolders (e.g. `Copter/Bebop2/init_...`) to initialize the parameters of
 the physical model as well as of the controller. There are simulation
 slx-file (e.g. `Copter/models/QuadcoterSimModel_...`) for different kinds of vehicles
-and different types of controllers.
+and different types of controllers.  
+For airplanes you can use the following FlightGear model for visualization: `./modules/ladac-examples-data/FlightGear/runfg_Dummy-RC-Airplane.sh`
 
 ### General use of ArduPilot SITL
 Standard ArduPilot flight modes will only work if you load appropriate parameters for you vehicle.

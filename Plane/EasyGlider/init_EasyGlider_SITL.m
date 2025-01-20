@@ -15,16 +15,10 @@ clc_clear;
 airplane = conventionalAirplaneLoadParams( ...
 	'params_conventional_airplane_EasyGlider' );
 
+channel_idx = 1:5;
+
 % environment parameters
 envir = envirLoadParams( 'envir_params_default', 'envir',0 );
 
-% should a joystick be used?
-cntrl.enable_remote_control = true;
-
 % open simulink model
 open_model('AirplaneSimModel_SITL')
-
-return;
-
-%%
-initInterfaceBuses;
