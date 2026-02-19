@@ -30,10 +30,10 @@ Finally, you can test your software in a software-in-the-loop simulation before 
 ## Installation
 
 - **MATLAB:**  
-  1. You need MATLAB/Simulink 2018b or later (older versions may work but they are not supported).
+  1. You need MATLAB/Simulink 2023b or later.
   2. You may also need some MATLAB toolboxes like Curve Fitting Toolbox, 
-	   Aerospace Blockset, Aerospace Toolbox, MATLAB Coder, MATLAB Compiler, 
-	   Simulink Control Design, Simulink Coder depending on what you want to do.
+	   MATLAB Compiler, MATLAB Coder, Embedded Coder, and Simulink Coder
+     depending on what you want to do.
 
 - **Remote control:**  
   You can use a remote control via USB if you have one.
