@@ -28,8 +28,6 @@ grnd = groundLoadParams( 'params_ground_default' );
 
 %% reference position lat, lon, alt
 pos_ref = posRefLoadParams( 'reference_position_params_default' );
-% initial altitude, in m
-pos_ref.alt = 10;
 
 %% Flight Gear settings for UDP connection
 % Flight Gear URL

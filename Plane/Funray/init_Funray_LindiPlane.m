@@ -22,11 +22,7 @@ envir = envirLoadParams( 'envir_params_default', 'envir', 0 );
 jystck = joystickLoadParams('joystick_params_Xbox_360',2,-1);
 
 % Initial altitude
-airplane.posRef.alt = 50;
-
-% Initial location (San Francisco)
-airplane.posRef.lat = 37.6117;
-airplane.posRef.lon = -122.37822;
+airplane.posRef.alt = airplane.posRef.alt + 30;
 
 % Inital conditons of rigid-body motion
 airplane.ic.q_bg = euler2Quat([0;0;-1.4]);

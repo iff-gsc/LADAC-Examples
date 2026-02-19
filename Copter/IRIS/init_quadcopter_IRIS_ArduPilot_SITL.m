@@ -21,14 +21,10 @@ envir = envirLoadParams('params_envir','envir',0);
 IC = loadInitialConditionsParams( 'params_initial_conditions_hover' );
 
 % initial motor angular velocity, in rad/s
-IC.omega_mot = [ 1; 1; 1; 1 ] * 497.6862;
-% trim command
-u_Trim = ones(4,1) * 0.6254;
+IC.omega_mot = [ 0; 0; 0; 0 ];
 
 %% reference position lat, lon, alt
-pos_ref = posRefLoadParams( 'reference_position_params_default' );
-% initial altitude, in m
-pos_ref.alt = 7;
+pos_ref = loadParams( 'flightgearRefPos_params_default' );
 
 %% load ground parameters (grnd)
 grnd = groundLoadParams( 'params_ground_default' );

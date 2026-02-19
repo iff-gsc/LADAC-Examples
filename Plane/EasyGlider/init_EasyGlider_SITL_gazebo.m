@@ -24,7 +24,3 @@ cntrl.enable_remote_control = true;
 % open simulink model
 open_model('AirplaneSimModel_SITL_gazebo');
 
-return;
-
-%%
-initInterfaceBuses;

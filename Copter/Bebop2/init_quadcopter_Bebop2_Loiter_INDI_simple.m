@@ -35,9 +35,9 @@ IC.omega_mot = [ 1; 1; 1; 1 ] * 843;
 grnd = groundLoadParams( 'params_ground_default' );
 
 %% reference position lat, lon, alt
-pos_ref = posRefLoadParams( 'reference_position_params_default' );
+pos_ref = loadParams( 'flightgearRefPos_params_default' );
 % initial altitude, in m
-pos_ref.alt = 10;
+pos_ref.alt = pos_ref.alt + 5;
 
 %% Flight Gear settings for UDP connection
 % Flight Gear URL

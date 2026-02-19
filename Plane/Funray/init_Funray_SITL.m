@@ -13,7 +13,6 @@ clc_clear;
 
 % init airplane parameters
 airplane = conventionalAirplaneLoadParams( 'airplane_params_Funray' );
-airplane.ic.s_Kg(3) = -5;
 
 channel_idx = 1:7;
 

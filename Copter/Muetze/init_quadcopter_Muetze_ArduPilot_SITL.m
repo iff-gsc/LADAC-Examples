@@ -22,16 +22,12 @@ IC = loadInitialConditionsParams( 'params_initial_conditions_hover' );
 
 % initial motor angular velocity, in rad/s
 IC.omega_mot = [ 1; 1; 1; 1 ] * 380.8113;
-% trim command
-u_Trim = ones(4,1) * 0.53714;
 
 %% load ground parameters (grnd)
 grnd = groundLoadParams( 'params_ground_default' );
 
 %% reference position lat, lon, alt
-pos_ref = posRefLoadParams( 'reference_position_params_default' );
-% initial altitude, in m
-pos_ref.alt = 10;
+pos_ref = loadParams( 'flightgearRefPos_params_default' );
 
 %% Flight Gear settings for UDP connection
 % Flight Gear URL

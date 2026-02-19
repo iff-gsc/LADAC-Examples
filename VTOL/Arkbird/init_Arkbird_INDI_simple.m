@@ -13,6 +13,8 @@ clc_clear;
 %% load Arkbird parameters
 tailsitter = tailsitterLoadParams( 'tailsitter_params_Arkbird' );
 
+tailsitter.posRef.alt = tailsitter.posRef.alt + 1;
+
 %% environment parameters
 envir = envirLoadParams('envir_params_default','envirBus',0);
 
