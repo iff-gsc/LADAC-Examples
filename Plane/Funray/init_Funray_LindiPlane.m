@@ -19,7 +19,7 @@ airplane = conventionalAirplaneLoadParams( 'airplane_params_Funray' );
 envir = envirLoadParams( 'envir_params_default', 'envir', 0 );
 
 % Joystick parameters
-jystck = joystickLoadParams('joystick_params_Xbox_360',2,-1);
+jystck = joystickLoadParams('joystick_params_Horus_X12',2,-1);
 
 % Initial altitude
 airplane.posRef.alt = airplane.posRef.alt + 30;
