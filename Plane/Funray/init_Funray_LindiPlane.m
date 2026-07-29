@@ -32,6 +32,8 @@ airplane.ic.omega_Kb = [0; 0; 0];
 
 %% Define waypoints
 waypoints = [ 0 0 0; 0 -1 0; 1 -1 0; 1 0 0 ]'*250 + [0;-100;0];
+M_bg = euler2Dcm(deg2rad([60;0;45]));
+waypoints = M_bg'*[ 0 0 0; -1 -1 0; 0 -2 0; 1 -1 0 ]'*45 + [0;-80;0];
 
 %% Compute LindiPlane parameters
 [lindi,lindi_notune] = lindiPlaneAutoCreate( airplane, 'SensFilt', [50,1], 'AgilityAtti', 1.3, 'AgilityPos', 1.3, 'ServoBoost', 0.6 );
