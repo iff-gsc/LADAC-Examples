@@ -1,4 +1,6 @@
-# Examples for the Library for Aircraft Dynamics And Control (LADAC)
+![LADAC ArduPilot interface](docs/images/ladac-examples-logo.svg)
+
+Example aircraft models, simulations, and flight-control applications built with LADAC.
 
 This repository contains multiple examples to demonstrate the usage of LADAC.
 There are multicopter, airplane and eVTOL flight dynamic models as well as flight controllers for the specific vehicles.
