@@ -1,4 +1,4 @@
-![LADAC ArduPilot interface](docs/images/ladac-examples-logo.svg)
+![LADAC Examples](docs/images/ladac-examples-logo.svg)
 
 Example aircraft models, simulations, and flight-control applications built with LADAC.
 
@@ -15,6 +15,8 @@ Moreover, there are interfaces to external programs like FlightGear (for visuali
       alt="Quadrotor Flight Path Control Demo" 
       style="width:50%;">
   </a>
+  <br>
+  <a href="https://youtu.be/NKl482yJtZI">▶ Watch video</a>
 </div>
 
 
